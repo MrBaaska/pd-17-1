@@ -963,6 +963,18 @@
 
       <div class="sidebar-divider"></div>
 
+<div class="sidebar-item">
+        <a href="#" class="sidebar-link danger-link" id="toggle-alert" data-page-key="Ажлын бүртгэл">
+          <i class="fa fa-sitemap"></i> Ажлын бүртгэл
+        </a>
+      </div>
+
+      <div class="sidebar-item">
+        <a href="#" class="sidebar-link danger-link" id="toggle-alert" data-page-key="Хурлын тэмдэглэл">
+          <i class="fa fa-sitemap"></i> Хурлын тэмдэглэл
+        </a>
+      </div>
+
       <div class="sidebar-item">
         <a href="#" class="sidebar-link danger-link" id="toggle-alert" data-page-key="Менежментийн нэгдсэн тогтолцоо">
           <i class="fa fa-sitemap"></i> Менежментийн нэгдсэн тогтолцоо
@@ -1647,9 +1659,10 @@
     const main = document.querySelector('.main');
     const titleText = clickedElement.textContent.trim().replace(/\s+/g, ' ');
     const isTushaalPage = pageKey === 'Тушаал, стандарт' || pageKey === 'уулзварын зайн судалгаа';
+    const isExpandedPage = isTushaalPage || pageKey === 'Ажлын бүртгэл' || pageKey === 'Хурлын тэмдэглэл';
 
     if (main) {
-      main.classList.toggle('tushaal-expanded', isTushaalPage);
+      main.classList.toggle('tushaal-expanded', isExpandedPage);
     }
 
     frame.src = resolvePageSrc(pageKey, titleText);
